@@ -1,8 +1,8 @@
-#======================
+#=======================
 # ~/.bashrc
 # Maintained by Justin Doyle
 # Last edited: July 13th, 2016
-#======================
+#=======================
 
 # Greeting {{{
 
@@ -667,7 +667,7 @@ if [ $UID -ne 0  ]; then
 	if [ -d $scripts ] ; then
 		files=( $scripts/*.sh )
 		for i in ${files[@]}; do
-			if [[ ! $i =~ "alias.sh" ]] && [[ ! $i =~ "wallpaper.sh" ]] && [[ ! $i =~ "randr.sh" ]] && [[ ! $i =~ "fixresolv.sh"  ]]; then
+			if [[ ! $i =~ "alias.sh" ]] && [[ ! $i =~ "wallpaper.sh" ]] && [[ ! $i =~ "randr.sh" ]] && [[ ! $i =~ "fixresolv.sh"  ]] && [[ ! $i =~ "gitrepo.sh" ]] ; then
 				source $i
 			fi
 		done
