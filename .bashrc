@@ -429,7 +429,7 @@ if [ $UID -ne 0 ]; then
 		alias htop="sudo htop"
 		alias top="htop"
 	fi
-	if hash testdisk 2/dev/null; then
+	if hash testdisk 2>/dev/null; then
 		alias td="sudo testdisk"
 	fi
 	alias sued="sudo -E"
