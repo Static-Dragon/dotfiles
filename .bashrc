@@ -1,7 +1,7 @@
 #=======================
 # ~/.bashrc
 # Maintained by Justin Doyle
-# Last edited: July 13th, 2016
+# Last edited: August 13th, 2016
 #=======================
 
 # Greeting {{{
@@ -55,11 +55,25 @@ else
 	export EDITOR=vi
 fi
 
+if hash mpv 2>/dev/null; then
+	VIDEO=mpv
+elif hash mplayer 2>/dev/null; then
+	VIDEO=mplayer
+fi
+
+if hash cmus 2>/dev/null; then
+	MUSIC=cmus
+elif hash mplayer 2>/dev/null; then
+	MUSIC=mplayer
+elif hash mpv 2>/dev/null; then
+	MUSIC="mpv --no-video"
+fi
+
 if hash firefox 2>/dev/null; then
 	if hash firejail 2>/dev/null; then
 		export BROWSER=GTK_THEME=Arc-Darker firejail firefox
 	else
-		export BROWSER=firefox
+		export BROWSER=firejail firefox
 	fi
 fi
 
@@ -95,7 +109,7 @@ fi
 
 
 # Useful settings for bash history
-:
+
 export HISTCONTROL=ignoredups #ignore duplicates in history
 export HISTCONTROL=ignoreboth
 export HISTIGNORE=ls:ll:la:l:cd:pwd:exit:mc:su:df:clear:cls #ignore the following commands in history
@@ -111,16 +125,15 @@ shopt -s extglob            # enable extended pattern-matching features
 shopt -s hostcomplete       # attempt hostname expansion when @ is at the beginning of a word
 shopt -s nocaseglob         # pathname expansion will be treated as case-insensitive
 
-
-if hash wine 2>/dev/null; then
-	export WINEARCH=win32
-fi
-
-# Enable command not found if it exists
-
 [ -r /etc/profile.d/cnf.sh ] && . /etc/profile.d/cnf.sh
 
+#if hash wine 2>/dev/null; then
+#	export WINEARCH=win32
+#fi
 
+if pgrep Xorg >/dev/null; then
+	xset -b 				# Disable console bell if X is running
+fi
 
 # Autocomplete {{{
 
@@ -143,11 +156,26 @@ fi
 
 # PS1 Prompt {{{
 
-if hash bash 2>/dev/null; then
 
-	export PS1="> \[$(tput sgr0)\]\[\033[38;5;50m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\] @ [\[$(tput sgr0)\]\[\033[38;5;5m\]\h\[$(tput sgr0)\]\[\033[38;5;15m\]: \[$(tput sgr0)\]\[\033[38;5;6m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]]\n\[$(tput sgr0)\]\[\033[38;5;40m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\]: \[$(tput sgr0)\]"
+# Non-powerline prompt{{{
+PS_np="> \[$(tput sgr0)\]\[\033[38;5;50m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\] @ [\[$(tput sgr0)\]\[\033[38;5;5m\]\h\[$(tput sgr0)\]\[\033[38;5;15m\]: \[$(tput sgr0)\]\[\033[38;5;6m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]]\n\[$(tput sgr0)\]\[\033[38;5;40m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\]: \[$(tput sgr0)\]"
+#}}}
 
+if hash powerline 2>/dev/null; then
+	if [ -f .powerline-shell.py ]; then
+		function _update_ps1() {
+		    PS1="$(~/.powerline-shell.py $? 2> /dev/null)"
+		}
+		if [ "$TERM" != "linux" ]; then
+	    	PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+		fi
+	else
+		export PS1=$PS_np
+	fi
+else
+	export PS1=$PS_np
 fi
+
 
 # }}}
 
@@ -174,6 +202,10 @@ fi
 if [ -f /etc/arch-release ]; then
 	alias pmedit="sued $EDITOR /etc/pacman.d/mirrorlist"
 	alias pconf="sued $EDITOR /etc/pacman.conf"
+	if hash abs 2>/dev/null; then
+		alias absconf="sued /etc/abs.conf"
+		alias makepkg="sued /etc/makepkg.conf"
+	fi
 # }}}
 
 # Debian/*buntu/mint {{{
@@ -235,15 +267,20 @@ if [ -f /etc/arch-release ] ; then
 		alias spacman="pacman"
 	fi
 	alias paci="spacman -S"
+	alias lspaci="pacman -Qe > /tmp/pkgs && less /tmp/pkgs && rm -f /tmp/pkgs"
 	alias pacr="spacman -R" # Re-writing in shell script for a more robust command (no need, back to OG alias)
 	alias pacs="pacman -Ss"
 	alias pacsi="pacman -Qs"
 	alias pacc="pacman -Sc"
-	alias pacu="spacman -Syu"
+	#alias pacu="spacman -Syu" Merged into yaourt block
 	if hash yaourt 2>/dev/null; then
 		alias auri="yaourt -S"
 		alias aurs="yaourt"
 		alias aurr="yaourt -R"
+		alias pacu="yaourt -Syu"
+	else
+		alias pacu="spacman -Syu"
+		alias auri=""
 	fi
 
 # }}}
@@ -307,8 +344,8 @@ elif [ -f /etc/gentoo-release ]; then
 		alias pacc="pacman -Sc"
 		alias pacu="spacman -Syu"
 	fi
-	# portage args
-	alias awr="--autounmask-write"
+	# portage args (Honestly, this one seemed kinda stupid)
+	# alias awr="--autounmask-write"
 
 # }}}
 
@@ -416,8 +453,7 @@ if [ $UID -ne 0 ]; then
 		fi
 		if hash screenfetch 2>/dev/null; then
 			alias screenfetch="screenfetch && sleep .5 && scrot"
-		fi
-		if hash neofetch 2>/dev/null; then
+		elif hash neofetch 2>/dev/null; then
 			alias neofetch="neofetch --ascii distro && sleep .5 && scrot"
 		fi
 	fi
@@ -434,15 +470,19 @@ if [ $UID -ne 0 ]; then
 	fi
 	alias sued="sudo -E"
 	if hash vim 2>/dev/null; then
-		alias svim="sudo vim"
+		alias svim="sued vim"
 	fi
+	alias mnt="sudo mount"
+	alias umnt="sudo umount"
 else
 	if hash htop 2>/dev/null; then
 		alias top="htop"
 	fi
-	if hash testdisk 2/dev/null; then
+	if hash testdisk 2>/dev/null; then
 		alias td="testdisk"
 	fi
+	alias mnt="mount"
+	alias umnt="umount"
 fi
 
 if hash ncdu 2>/dev/null; then
@@ -516,7 +556,7 @@ if hash git 2>/dev/null; then
 	alias gcp='git cherry-pick'
 	alias grm='git rm'
 	alias gmk='git clone'
-	alias gitupdate='(for l in `find . -name .git | xargs -i dirname {}` ; do cd $l; pwd; git pull; cd -; done) 2>/dev/null' #Update all git repos on system
+	alias gitu='(for l in `find . -name .git | xargs -i dirname {}` ; do cd $l; pwd; git pull; cd -; done) 2>/dev/null' #Update all git repos on system
 
 fi
 
@@ -551,7 +591,7 @@ extract () {
            *.tar.bz2)   tar xvjf $1    ;;
            *.tar.gz)    tar xvzf $1    ;;
            *.bz2)       bunzip2 $1     ;;
-           *.rar)       unrar x $1       ;;
+           *.rar)       unrar x $1     ;;
            *.gz)        gunzip $1      ;;
            *.tar)       tar xvf $1     ;;
            *.tbz2)      tar xvjf $1    ;;
@@ -559,6 +599,7 @@ extract () {
            *.zip)       unzip $1       ;;
            *.Z)         uncompress $1  ;;
            *.7z)        7z x $1        ;;
+		   *.lrz) 		lrunzip $1 	   ;;
            *)           echo "don't know how to extract '$1'..." ;;
        esac
    else
@@ -593,31 +634,70 @@ up(){
 # mount an ISO file. (mountiso FILE)
 
 mountiso () {
-  name='basename "$1" .iso'
-  mkdir /tmp/$name 2>/dev/null
-  sudo mount -o loop "$1" "/tmp/$name"
-  echo "mounted iso on /tmp/$name"
+	mountpoint -q /mnt
+	MNT1=$?
+	mountpoint -q /mnt2
+	MNT2=$?
+	if [ $MNT2 = "1" ]; then
+		sudo mount -o loop "$1" /mnt2
+		echo "mounted $1 on /mnt2"
+	elif [ $MNT1 = "1" ]; then
+  		sudo mount -o loop "$1" /mnt
+		echo "mounted $1 on /mnt"
+	else
+		echo "no /mnt directories available to mount"
+	 fi
 }
 
 # }}}
+
+# Umountiso {{{
+
+#unmount all isos
+
+umountiso () {
+	mountpoint -q /mnt
+	MNT1=$?
+	mountpoint -q /mnt2
+	MNT2=$?
+
+	if [ $MNT2 = "0" ]; then
+		sudo umount /mnt2
+		umountiso
+	elif [ $MNT1 = "0" ]; then
+		sudo umount /mnt
+	else
+		echo "no ISOs are mounted"
+	fi
+
+}
+
+#}}}
 
 # myip {{{
 
 #Find your current IP (Assuming you're connected to the internet
 
-myip () {
-	lynx -dump -hiddenlinks=ignore -nolist http://checkip.dyndns.org:8245/ | awk '{ print $4 }' | sed '/^$/d; s/^[ ]*//g; s/[ ]*$//g' 
-}
+if hash lynx 2>/dev/null; then
+	myip () {
+		lynx -dump -hiddenlinks=ignore -nolist http://checkip.dyndns.org:8245/ | awk '{ print $4 }' | sed '/^$/d; s/^[ ]*//g; s/[ ]*$//g' 
+	}
+fi
 
 # }}}
 
 # MPV Youtube Music {{{
 
 # Play music from youtube via MPV
-
-function mm() {
-	mpv --no-video --ytdl-format=bestaudio ytdl://ytsearch10:"$@"
-}
+if hash mpv 2>/dev/null; then
+	if hash youtube-dl 2>/dev/null; then
+		function mm() {
+			mpv --no-video --ytdl-format=bestaudio ytdl://ytsearch10:"$@"
+		}
+	else
+		echo "you need youtube-dl to run this command"
+	fi
+fi
 
 # }}}
 
@@ -625,9 +705,15 @@ function mm() {
 
 # Watch twitch streams via MPV
 
-function twitch() {
-	livestreamer -p mpv twitch.tv/$@ source &
-}
+if hash mpv 2>/dev/null; then
+	if hash livestreamer 2>/dev/null; then
+		function twitch() {
+			livestreamer -p $VIDEO twitch.tv/$@ source &
+		}
+	else
+		echo "You need livestreamer to run this command"
+	fi
+fi
 
 # }}}
 
@@ -658,7 +744,9 @@ function compress() {
 
 # }}}
 
-# Scripts {{{
+# }}}
+
+#  Scripts {{{
 
 # Import scripts
 
@@ -667,11 +755,24 @@ if [ $UID -ne 0  ]; then
 	if [ -d $scripts ] ; then
 		files=( $scripts/*.sh )
 		for i in ${files[@]}; do
-			if [[ ! $i =~ "alias.sh" ]] && [[ ! $i =~ "wallpaper.sh" ]] && [[ ! $i =~ "randr.sh" ]] && [[ ! $i =~ "fixresolv.sh"  ]] && [[ ! $i =~ "gitrepo.sh" ]] ; then
-				source $i
+			if [[ ! $i =~ "alias.sh" ]] && [[ ! $i =~ "wallpaper.sh" ]] && [[ ! $i =~ "randr.sh" ]] && [[ ! $i =~ "fixresolv.sh"  ]] && [[ ! $i =~ "gitrepo.sh" ]] && [[ ! $1 =~ "bash-powerline.sh" ]] ; then
+				if [[ ! $i =~ "zrcedit.sh" ]]; then
+					source $i
+					if [[ ! $i =~ "vrcedit.sh" ]]; then
+						source $i
+					else
+						if hash vim 2>/dev/null; then
+							source $i
+						fi
+					fi
+				else
+					if hash zsh 2>/dev/null; then
+						source $i
+					fi
+ 				fi
 			fi
 		done
 	fi
 fi
 
-# }}}
+
