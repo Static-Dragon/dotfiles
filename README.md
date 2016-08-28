@@ -27,6 +27,8 @@ Also the following plugins:
 
 [Pathogen by tpope](https://github.com/tpope/vim-pathogen) (Required for all below plugins)
 
+[vim-fugitive by tpope](https://github.com/tpope/vim-fugitive)
+
 [Supertab by ervandew](https://github.com/ervandew/supertab)
 
 [Vim-Airline](https://github.com/vim-airline/vim-airline)
@@ -39,7 +41,13 @@ Also the following plugins:
 
 [Vim-litecorrect by reedes](https://github.com/reedes/vim-litecorrect)
 
+[vim-pencil by reedes](https://github.com/reedes/vim-pencil)
 
+[vim-snipmate by garbas](https://github.com/garbas/vim-snipmate)
+
+[gruvbox by morhetz](https://github.com/morhetz/gruvbox)
+
+### Note for plugin authors
 If any plugin author wishes me to do so, I will remove my .vim folder from the repo
 
 ## NOTE
