@@ -24,13 +24,21 @@ Obviously you will need rofi and Urxvt for the .Xresources changes to apply to t
 ## Requirements for vim changes
 Vim Requires powerline fonts, and lua for the plugins to function correctly
 Also the following plugins:
+
 [Pathogen by tpope](https://github.com/tpope/vim-pathogen) (Required for all below plugins)
+
 [Supertab by ervandew](https://github.com/ervandew/supertab)
+
 [Vim-Airline](https://github.com/vim-airline/vim-airline)
+
 [Neocomplete by Shougo](https://github.com/Shougo/neocomplete.vim)
+
 [NERDTree by scrooloose](https://github.com/scrooloose/nerdtree)
+
 [NERDTRee-tabs by jistr](https://github.com/jistr/vim-nerdtree-tabs)
+
 [Vim-litecorrect by reedes](https://github.com/reedes/vim-litecorrect)
+
 
 If any plugin author wishes me to do so, I will remove my .vim folder from the repo
 
