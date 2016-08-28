@@ -47,8 +47,6 @@ Also the following plugins:
 
 [gruvbox by morhetz](https://github.com/morhetz/gruvbox)
 
-### Note for plugin authors
-If any plugin author wishes me to do so, I will remove my .vim folder from the repo
 
 ## NOTE
 Anyone wishing to fork any of my dotfiles, feel free to create a seperate branch, if the changes are something that I would find use of and actually use in my workflow, I will integrate it into the master branch with your permission
