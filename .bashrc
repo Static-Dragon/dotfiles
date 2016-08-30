@@ -272,12 +272,17 @@ if [ -f /etc/arch-release ] ; then
 	alias pacs="pacman -Ss"
 	alias pacsi="pacman -Qs"
 	alias pacc="pacman -Sc"
-	#alias pacu="spacman -Syu" Merged into yaourt block
+	#alias pacu="spacman -Syu" Merged into AUR-helper block
 	if hash yaourt 2>/dev/null; then
 		alias auri="yaourt -S"
 		alias aurs="yaourt"
 		alias aurr="yaourt -R"
 		alias pacu="yaourt -Syu"
+	elif hash pacaur 2>/dev/null; then
+		alias auri="pacaur -S"
+		alias aurs="pacaur -s"
+		alias aurr="pacaur -R"
+		alias pacu="pacaur -Syu"
 	else
 		alias pacu="spacman -Syu"
 		alias auri=""
