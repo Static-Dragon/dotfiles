@@ -131,7 +131,7 @@ shopt -s nocaseglob         # pathname expansion will be treated as case-insensi
 #	export WINEARCH=win32
 #fi
 
-if pgrep Xorg >/dev/null; then
+if pgrep Xorg 2>/dev/null; then
 	xset -b 				# Disable console bell if X is running
 fi
 
@@ -209,7 +209,7 @@ if [ -f /etc/arch-release ]; then
 # }}}
 
 # Debian/*buntu/mint {{{
-elif [ -f /etc/debian-release ]; then
+elif [ -f /etc/debian-release -o -f /etc/debian_version ]; then
 	alias asedit="sued $EDITOR /etc/apt/sources.list"
 # }}}
 
@@ -291,7 +291,7 @@ if [ -f /etc/arch-release ] ; then
 # }}}
 
 # Debian/*buntu/Mint {{{
-elif [ -f /etc/debian-release ]; then
+elif [ -f /etc/debian-release -o -f /etc/debian_version ]; then
 	aptpref="apt-get"
 	if [ $UID -ne 0 ]; then
 		alias sag="sudo $aptpref"
