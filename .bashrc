@@ -36,10 +36,15 @@
 
 # Tmux start {{{
 
-#if which tmux >/dev/null 2>&1; then
-	#if not inside a tmux session, and if no session is started, start a new session
-#    test -z "$TMUX" && (tmux attach || tmux new-session)
-#fi
+if which tmux >/dev/null 2>&1; then
+    # if no session is started, start a new session
+    test -z ${TMUX} && tmux
+
+    # when quitting tmux, try to attach
+    while test -z ${TMUX}; do
+        tmux attach || break
+    done
+fi
 
 # }}}
 
@@ -131,9 +136,9 @@ shopt -s nocaseglob         # pathname expansion will be treated as case-insensi
 #	export WINEARCH=win32
 #fi
 
-if pgrep Xorg 2>/dev/null; then
-	xset -b 				# Disable console bell if X is running
-fi
+#if pgrep Xorg >/dev/null; then
+#	xset -b 				# Disable console bell if X is running
+#fi
 
 # Autocomplete {{{
 
@@ -209,7 +214,7 @@ if [ -f /etc/arch-release ]; then
 # }}}
 
 # Debian/*buntu/mint {{{
-elif [ -f /etc/debian-release -o -f /etc/debian_version ]; then
+elif [ -f /etc/debian-release ]; then
 	alias asedit="sued $EDITOR /etc/apt/sources.list"
 # }}}
 
@@ -262,9 +267,17 @@ alias hosts="$PAGER /etc/hosts"
 # Arch {{{
 if [ -f /etc/arch-release ] ; then
 	if [ $UID -ne 0 ]; then
-		alias spacman="sudo pacman"
+		if hash pacmatic 2>/dev/null; then
+			alias spacman="sudo pacmatic"
+		else
+			alias spacman="sudo pacman"
+		fi
 	else
-		alias spacman="pacman"
+		if hash pacmatic 2>/dev/null; then
+			alias spacman="pacmatic"
+		else
+			alias spacman="pacman"
+		fi
 	fi
 	alias paci="spacman -S"
 	alias lspaci="pacman -Qe > /tmp/pkgs && less /tmp/pkgs && rm -f /tmp/pkgs"
@@ -272,12 +285,13 @@ if [ -f /etc/arch-release ] ; then
 	alias pacs="pacman -Ss"
 	alias pacsi="pacman -Qs"
 	alias pacc="pacman -Sc"
+	alias mkpkg="makepkg -si"
 	#alias pacu="spacman -Syu" Merged into AUR-helper block
 	if hash yaourt 2>/dev/null; then
 		alias auri="yaourt -S"
 		alias aurs="yaourt"
 		alias aurr="yaourt -R"
-		alias pacu="yaourt -Syu"
+		alias pacu="yaourt -Syua"
 	elif hash pacaur 2>/dev/null; then
 		alias auri="pacaur -S"
 		alias aurs="pacaur -s"
@@ -291,7 +305,7 @@ if [ -f /etc/arch-release ] ; then
 # }}}
 
 # Debian/*buntu/Mint {{{
-elif [ -f /etc/debian-release -o -f /etc/debian_version ]; then
+elif [ -f /etc/debian-release ]; then
 	aptpref="apt-get"
 	if [ $UID -ne 0 ]; then
 		alias sag="sudo $aptpref"
@@ -448,6 +462,12 @@ if hash nemo 2>/dev/null; then
 	alias nemo="nemo --no-desktop"
 fi
 
+if hash lxlogout 2>/dev/null; then
+	if [ -f ~/.rotator ]; then
+		alias lxlogout='killall -9 .rotator | exit 0 && lxsession-logout'
+	fi
+fi
+
 if [ $UID -ne 0 ]; then
 	if hash scrot 2>/dev/null; then
 		if [ -d ~/Pictures/screenshots  ]; then	
@@ -525,7 +545,8 @@ alias home="cd ~/"
 alias Downloads="cd ~/Downloads"
 alias config="cd ~/.config"
 alias l="command ls"
-alias ls="ls -lAsh --group-directories-first --color"
+alias la="ls -lash --color"
+alias ls="ls -lsh --color"
 alias dir='ls'
 # alias cd="cd $1 && ls" Doesn't work, needs to be function
 
@@ -586,6 +607,14 @@ fi
 
 # Function Declaration {{{ 
 
+# ls {{{
+
+#function ls () {
+#	ls -lsh --color | awk {'print $4" "$7" "$8" "$9" "$10'}
+#}
+
+###  }}}
+ 
 # extract {{{
 
 # Runs command based on file extension of compressed file
@@ -749,7 +778,7 @@ function compress() {
 
 # }}}
 
-# }}}
+ # }}}
 
 #  Scripts {{{
 
