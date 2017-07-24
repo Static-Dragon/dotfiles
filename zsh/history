@@ -1,0 +1,1179 @@
+dir
+cd s
+share
+dir
+cd eclipse
+c
+cd ..
+dir
+cd bin
+dir
+cd eclipse
+vim eclipse
+cd $ECLIPSE_HOME
+dir
+c
+la
+cd .eclipse
+dir
+cd org.eclipse.platform_4.6.2_155965261_linux_gtk_x86_64
+dir
+cd
+c
+cd /usr/bin/eclipse
+cd /usr/share/eclipse
+find eclimd .
+cd
+c
+find eclimd /
+cd /usr/lib/eclipse
+dir
+./eclim
+less eclim
+./eclimd
+sudo su
+./eclimd
+c
+./eclimd &
+c
+vim 
+c
+cd
+c
+dir
+c
+vim
+cd Documents/Programming/Java
+dir
+cd test
+dir
+cd src/
+dir
+la
+cd ..
+la
+vim .classpath
+c
+dir
+cd src
+dir
+cd ,,
+cd ..
+vim .classpath
+dir
+c
+cd src/
+mkdir -p /org/test
+sudo mkdir -p /org/test
+cd /org/test/java
+sudo mkdir -p java/org/test
+dir
+cd java/org/test
+vim TestMain.java
+vim ~/.vimrc
+vim TestMain.java
+c
+c
+aurs pacman gui
+aurs pacman 
+auri kalu
+vim .config/i3/config
+c
+xev
+sudo su
+pacs polkit
+paci polkit-gnome
+sudo pacman -S polkit-gnome
+sudo pacman -S polkit-gnome
+ vim .config/i3/config
+systemctl restart
+systemctl -h
+systemctl reboot
+gnome-polkit
+systemctl list-units
+pacs policykit
+pacs gksu
+paci gksu
+d
+pacman -Qdtq
+pacman -Qdtq | sudo pacman -R -
+pacman -Qdtq | sudo pacman -R -
+pacman -Qdtq | sudo pacman -R -
+pacman -Qdtq | sudo pacman -R -
+pacman -Qdtq | sudo pacman -R -
+c
+sudo gparted
+c
+c
+pacs convert mp3 flac
+paci audio-convert
+dir
+c
+sudo mount -t cifs //192.168.1.65/music /mnt -o user=justin
+cd /mnt
+dir
+cd Justin
+dir
+cd Fall\ Out\ Boy
+dir
+cd ..
+c
+convert
+?c
+c
+paci ffmpeg
+for a in {./*/*/*.mp3,./*/*/*/*.mp3}; do\
+ffmpeg -i "$a" -qscale:a 0 "${a[@]/%mp3/flac}"\
+done
+for a in ./*/*/*.mp3; do\
+ffmpeg -i "$a" -qscale:a 0 "${a[@]/%mp3/flac}"\
+done
+sudo for a in ./*/*/*.mp3; do
+for a in ./*/*/*.mp3; do\
+sudo ffmpeg -i "$a" -qscale:a 0 "${a[@]/%mp3/flac}"\
+done
+cd /mnt2
+dir
+cd /mnt
+d
+dir
+cd Justin
+su
+sudo su
+ffmpeg
+ffmpeg -h
+ffmpeg -h | grep force
+ffmpeg -h | grep confirm
+neofetch
+paci gimp
+wget https://youtu.be/XHSRv4Hsxn0
+dir
+rm XHSRv4Hsxn0 
+c
+cmatrix
+systemctl poweroff
+pacs zeromq
+pacr zeromq
+c
+pacs chrome
+paci chromium
+pacs pinball
+aurs pinball
+auri pinball
+pinball
+aurs zeromq
+aurs zeromq
+aurs scratch
+c
+c
+systemctl poweroff
+paci wireshark
+pacs wireshark
+paci wireshark-{gtk,cli}
+pacu
+neofetch
+neofetch
+c
+neofetch
+neofetch
+neofetch
+c
+htop
+systemctl stop teamviewerd
+c
+neofetch
+systemctl poweroff
+xprop
+vim .config/i3/config
+paci galculator
+pacu
+sudo pacman -syuw
+sudo pacman -Syuw
+rm /etc/ssl/certs/ca-certificates.crt
+sudo rm /etc/ssl/certs/ca-certificates.crt
+sudo pacman -Su
+xev
+systemctl poweroff
+pacs obs
+paci obs
+paci obs-studio
+cd Downloads/Telegram\ Desktop
+dir
+mono Tiles.exe
+mono Tiles.exe
+c
+ffmpeg
+cd
+c
+ffmpeg -i 2017-03-22\ 11-11-35.flv -c:v libx264 -crf 19 -strict experimental create.mp4
+dir
+mpv create.mp4
+c
+aurs spotify
+cd Downloads
+dir
+cd Telegram\ Desktop
+dir
+mono Tiles.exe
+systemctl poweroff
+systemctl poweroff
+pacr clucene
+pacr chromium crypto++
+pacr chromium crypto++ clementine eclim filezilla fortune-mod cmatrix fingerprint-gui gksu gnome-desktop lightdm-gtk-greeter-settings linux-libre-api-headers osbuddy osdbattery pinball qt5 qt4 ttf-droid ttf-fira-code vim-youcompleteme-git xf86vidmodeproto 
+pacr chromium crypto++ clementine eclim filezilla fortune-mod cmatrix fingerprint-gui gksu gnome-desktop lightdm-gtk-greeter-settings linux-libre-api-headers osbuddy osdbattery pinball qt5 qt4 ttf-droid ttf-fira-code vim-youcompleteme-git xf86vidmodeproto  qca-qt4 openshot mplayer
+pacr chromium crypto++ clementine eclim filezilla fortune-mod cmatrix fingerprint-gui gksu gnome-desktop lightdm-gtk-greeter-settings linux-libre-api-headers osbuddy osdbattery pinball qt5 qt4 ttf-droid  vim-youcompleteme-git xf86vidmodeproto  qca-qt4 openshot mplayer libopenshot polkit-qt4 pyqt5 qjson 
+pacr chromium crypto++ clementine eclim filezilla fortune-mod cmatrix fingerprint-gui gksu gnome-desktop lightdm-gtk-greeter-settings linux-libre-api-headers osbuddy osdbattery pinball qt5 qt4 ttf-droid  vim-youcompleteme-git xf86vidmodeproto  qca-qt4 openshot mplayer libopenshot polkit-qt4 pyqt5-common qjson
+pacr chromium crypto++ clementine eclim filezilla fortune-mod cmatrix fingerprint-gui gksu gnome-desktop lightdm-gtk-greeter-settings linux-libre-api-headers osbuddy osdbattery pinball qt5 qt4 ttf-fira-code  vim-youcompleteme-git xf86vidmodeproto  qca-qt4 openshot mplayer libopenshot polkit-qt4 pyqt5-common qjson
+pacr chromium crypto++ clementine eclim filezilla fortune-mod cmatrix fingerprint-gui gksu gnome-desktop lightdm-gtk-greeter-settings linux-libre-api-headers osbuddy osdbattery pinball qt5 qt4 ttf-fira-code  vim-youcompleteme-git xf86vidmodeproto  qca-qt4 openshot mplayer libopenshot polkit-qt4 pyqt5-common qjson python-pyqt5 obs-studio liblastfm libechonest 
+pacr chromium crypto++ clementine eclim filezilla fortune-mod cmatrix fingerprint-gui gksu gnome-desktop lightdm-gtk-greeter-settings linux-libre-api-headers osbuddy osdbattery pinball qt5 qt4 ttf-fira-code  vim-youcompleteme-git xf86vidmodeproto  qca-qt4 openshot mplayer libopenshot polkit-qt4 pyqt5-common qjson python-pyqt5 obs-studio liblastfm libechonest  gnome-font-viewer keepassx2 libxxf86vm evince glibc
+pacr chromium crypto++ clementine eclim filezilla fortune-mod cmatrix fingerprint-gui gksu gnome-desktop lightdm-gtk-greeter-settings linux-libre-api-headers osbuddy osdbattery pinball qt5 qt4 ttf-fira-code  vim-youcompleteme-git xf86vidmodeproto  qca-qt4 openshot mplayer libopenshot polkit-qt4 pyqt5-common qjson python-pyqt5 obs-studio liblastfm libechonest  gnome-font-viewer keepassx2 libxxf86vm evince 
+pacr chromium crypto++ clementine eclim filezilla fortune-mod cmatrix fingerprint-gui gksu gnome-desktop lightdm-gtk-greeter-settings linux-libre-api-headers osbuddy osdbattery pinball qt5 qt4 ttf-fira-code  vim-youcompleteme-git xf86vidmodeproto  qca-qt4 openshot mplayer libopenshot polkit-qt4 pyqt5-common qjson python-pyqt5 obs-studio liblastfm libechonest  gnome-font-viewer keepassx2  evince 
+pacr chromium crypto++ clementine eclim filezilla fortune-mod cmatrix fingerprint-gui gksu gnome-desktop lightdm-gtk-greeter-settings linux-libre-api-headers osbuddy osdbattery pinball qt5 qt4 ttf-fira-code  vim-youcompleteme-git   qca-qt4 openshot mplayer libopenshot polkit-qt4 pyqt5-common qjson python-pyqt5 obs-studio liblastfm libechonest  gnome-font-viewer keepassx2  evince 
+pacs linux api
+paci linux-api-headers
+pacr chromium crypto++ clementine eclim filezilla fortune-mod cmatrix fingerprint-gui gksu gnome-desktop lightdm-gtk-greeter-settings  osbuddy osdbattery pinball qt5 qt4 ttf-fira-code  vim-youcompleteme-git   qca-qt4 openshot mplayer libopenshot polkit-qt4 pyqt5-common qjson python-pyqt5 obs-studio liblastfm libechonest  gnome-font-viewer keepassx2  evince 
+pacman -Qdtq
+pacman -Qdtq | sudo pacman -R -
+pacman -Qdtq | sudo pacman -R -
+pacman -Qdtq | sudo pacman -R -
+pacman -Qdtq | sudo pacman -R -
+c
+pacr cowsay conky
+pacman -Qdtq
+systemctl  status
+c
+systemctl list-units
+c
+neofetch
+pacman -Qdtq
+pacman -Q
+pacman -Q | less
+pacman -Q | less
+neofetch
+c
+neofetch
+neofetch
+cd /boot
+dir
+cd ..
+dir
+sudo su
+cd /boot
+dir
+cd ..
+c
+dir
+sudo su
+cd /boot
+dir
+cd 
+dir
+cd /
+dir
+sudo us
+sudo su
+cd /boot
+dir
+sudo su
+c
+df
+xset
+xset s 
+xset s 600
+xset s 1200
+xset -q
+pacs xprintidle
+pacs idle
+xprintidle
+vim .config/i3/config
+vim .config/i3/config
+systemctl service
+systemctl 
+systemctl -h
+systemctl edit i3lock
+systemctl edit --force i3lock
+sudo systemctl edit --force i3lock
+vim .config/i3/config
+xprop
+vim .config/i3/config
+vim .config/i3/config
+c
+systemctl
+systemctl -h
+sudo systemctl start i3lock
+sudo systemctl edit --force i3lock
+sudo systemctl edit i3lock
+sudo systemctl edit i3lock.service 
+sudo systemctl start i3lock.service 
+c
+xev
+ls /usr/share
+ls /usr/share | grep jzmq
+aurs jzmq
+aurs zeromq
+aurs zeromq java
+aurs zmq
+aurs zmq java
+pacs zmq
+c
+pacman -Q
+pacman -Q | less
+pacr efibootmgr
+pacr xorg-xset
+pacr xorg-xset xdg-utils
+c
+lsmod
+lsmod | grep kvm
+sudo su
+lsmod | grep kvm
+lsmod
+lsmod | grep kvm
+sudo su
+lsmod | grep kvm
+systemctl list-units
+pacman -Q | less
+sudo su
+c
+sudo su
+c
+sudo su
+killall kalu
+vim .config/i3/polybar/topbar.ini
+cd .config/i3/polybar
+mv topbar.ini topbar.ini.bak
+leafpad topbar.ini
+polybar topbar.ini
+dir
+polybar
+polybar -c
+polybar -c topbar.ini
+polybar -c topbar.ini topbar
+polybar -c topbar.ini polybar
+rm topbar.ini
+mv topbar.ini.bak topbar.ini
+paci gnome
+c
+vim ../config
+exi
+vim ../config
+xev
+systemctl
+systemctl -h
+paci xterm
+vim ../config
+vim .config/i3/config
+git clone https://github.com/zeromq/jzmq.git
+cd jzmq
+./autogen.sh
+./configure
+dir
+la
+cd jzmq
+dir
+cd ..
+make
+./configure
+paci autoconf
+ldconfig
+sudo ldconfig
+which ldconfig
+cd jz
+cd jzmq
+dir
+less README.md
+cd jzmq-jni
+dir
+./autogen.sh
+dir
+./INSTALL
+./config
+./configure
+make
+./configure
+cd ..
+./configure
+c
+cd
+c
+cmus
+sudo mkinitcpio -p linux
+c
+dir
+la
+c
+la
+clear
+fedu
+c
+vi /etc/zshrc
+\vi /etc/zshrc
+vi /etc/shellrc/zsh.d/prompt.zsh
+sudo vi /etc/shellrc/zsh.d/prompt.zsh
+clear
+exit
+neofetch
+\neofetch
+sudo dnf copr enable konimex/neofetch
+fedi neofetch
+neofetch
+feds powerline
+fedi powerline{-fonts,""}
+less /etc/shellrc/zsh.d/prompt.zsh
+less /etc/shellrc/zsh.d/prompt.zsh
+git clone https://github.com/bhilburn/powerlevel9k.git /usr/share/zsh-theme-powerlevel9k
+sudo git clone https://github.com/bhilburn/powerlevel9k.git /usr/share/zsh-theme-powerlevel9k
+sudo vi /etc/shellrc/zsh.d/prompt.zsh
+c
+less /etc/shellrc/zsh.d/prompt.zsh
+less /etc/shellrc/zsh.d/prompt.zsh
+git clone https://github.com/gabrielelana/awesome-terminal-fonts.git
+cd awesome-terminal-fonts
+dir
+cd build
+dir
+cp * ~/.fonts
+cd ../build
+dir
+cp * ~/.fonts
+fc-cache -fv ~/.fonts
+cd confi
+cd .config/
+dir
+cd
+clear
+cd awesome-terminal-fonts/config
+dir
+vi 10-symbols.conf
+\vi 10-symbols.conf
+cp 10-symbols.conf ~/.config/fontconfig/conf.d
+cp -p 10-symbols.conf ~/.config/fontconfig/conf.d
+mkdir -p ~/.config/fontconfig/conf.d
+cp -p 10-symbols.conf ~/.config/fontconfig/conf.d
+cd
+cd .config/zsh
+vi .zshrc
+\vi .zshrc
+dir
+clear
+cd /etc/shellrc/zsh.d
+dir
+sudo vi prompt.zsh
+cd .config/zsh
+vi .zshrc
+\vi .zshrc
+dir
+\vi .zshrc
+\vi ~/.config/zsh/.zshrc
+exit
+\vi ~/.config/zsh/.zshrc
+clear
+dirt
+dir
+rm -rf awesome-terminal-fonts
+c
+git clone https://github.com/powerline/fonts.git
+cd fonts
+dir
+./install.sh
+c
+cd
+c
+cd /etc/shellrc/zsh.d
+dir
+sudo vi prompt.zsh
+exit
+c
+dir
+c
+neofetch
+vi .config/neofetch
+fedi neovim
+neovim
+nvim
+c
+cd /etc/shellrc
+dir
+sudo vi alias.d
+c
+vi
+sudo vi /etc/shellrc/alias.d
+exit
+vi
+c
+vi .config/neofetch/config
+neofetch
+vi .config/neofetch/config
+neofetch
+vi .config/neofetch/config
+neofetch
+vi .config/neofetch/config
+neofetch
+vi .config/neofetch/config
+neofetch
+vi .config/neofetch/config
+neofetch
+c
+lsblk
+neofetch
+neofetch
+vi .config/neofetch/config
+neofetch
+lsblk
+neofetch
+vi .config/neofetch/config
+neofetch
+vi .config/neofetch/config
+lsblk
+c
+vi .config/neofetch/config
+c
+neofetch
+c
+c
+c
+cd Downloads
+dir
+flatpak install --bundle discord.flatpakref
+flatpak install --from https://jgrulich.fedorapeople.org/telegram/telegram.flatpakref
+flatpak install --from https://s3.amazonaws.com/alexlarsson/skype-repo/skype.flatpakref
+dnf copr enable georgespk/keepassx 
+sudo dnf copr enable georgespk/keepassx 
+fedi keepassx
+neofetch
+fedi lm_sensors lm_sensors-sensord
+watch sensors
+sudo sensors-detect
+watch sensors
+c
+neofetch
+vi .config/neofetch/config
+neofetch
+pip
+pip install neovim
+easy_install
+la
+cd .config
+dir
+cd nvim
+mkdir nvim
+cd nvim
+vi init.vim
+vi init.vim
+vi init.vim
+vi
+vo
+vi
+vi init.vim
+c
+cd
+cd Documents
+dir
+mkdir programming
+cd programming
+mkdir web_dev
+cd web_dev
+dir
+mkdir test
+cd test
+vi test.html
+c
+cd
+c
+fedu
+fedu
+fedu
+fedr chromium-libs-media chromium
+sudo virsh start win10
+sudo  firewall-cmd --permanent --add-service=samba
+reboot
+less /etc/shellrc/zsh.d/prompt.zsh
+less ~/.config/zsh/.zshrc
+less /etc/zshrc
+fedi automake gcc gcc-c++ kernel-devel cmake python-devel python3-devel rust npm mono-devel
+sudo virsh start win10
+feds powerline
+history
+sudo history
+sudo su
+c
+fedi nodejs
+fedi npm
+cd .config/nvim
+dir
+rm -rf *
+vi
+vi init.vim
+vi
+dir
+cd bundle
+dir
+cd YouCompleteMe
+dir
+./install.py --all
+c
+./install.py --omnisharp-completer --tern-completer --racer-completer
+cd 
+vi
+cd Documents/
+dir
+cd programming
+dir
+cd web_dev
+dir
+cd test
+dir
+vi test.js
+c
+rm test.js
+mkdir test.cs
+rm -rf test.cs
+vi test.cs
+vi test.cs
+c
+cd ~/.config/nvim
+dir
+vi init.vim
+vi init.vim
+vi
+vi init.vim
+vi
+vi init.vim
+vi init.vim
+vi init.vim
+vi
+cd ~/Documents/programming/web_dev
+dir
+cd touch
+cd test
+touch test.html
+vi test.
+vi test.
+vi test.html
+vi ~/.config/nvim/init.vim
+vi test.html
+vi test.html
+vi
+vi ~/.config/nvim/init.vim
+vi
+c
+cd
+c
+sudo virsh start win10
+neofetch
+sudo dnf upgrade --refresh
+ls /etc/yum.repos.d
+sudo rm -rf /etc/yum.repos.d/fedora-updates{"",-testing}.repo
+ls /etc/yum.repos.d
+sudo dnf update
+sudo dnf upgrade --refresh
+sudo rm -rf /etc/yum.repos.d/rpmfusion-free-updates{-testing,""}.repo
+sudo rm -rf /etc/yum.repos.d/rpmfusion-nonfree-updates{-testing,""}.repo
+ls /etc/yum.repos.d
+c
+cd
+c
+sudo dnf upgrade
+sudo dnf upgrade --refres
+sudo dnf upgrade --refresh
+dnf copr enable vishalv/discord-canary
+sudo dnf copr enable vishalv/discord-canary
+fedi discord-canary
+fedu
+vi
+c
+vi
+vi
+c
+dnf repolist
+cd /etc/yum.repos.d
+dir
+ fedi grub-customizer
+c
+cd /boot/grub2
+dir
+cd themes
+dir
+cd system
+dir
+cd
+c
+cd /boot/efi/
+dir
+sudo su
+c
+fedi grub-customizer
+fedr grub2
+cd /run/media/static-dragon/JUSTIN
+dir
+sudo cp -v fedora*.repo /etc/yum.repos.d
+sudo dnf config-manager --set-enabled fedora
+sudo dnf config-manager --set-enabled fedora-updates
+ls /etc/yum.repos.d
+sudo dnf config-manager --set-enabled updates
+yum grouplist
+yum repolist
+fedu
+fedi grub-customizer
+fedu
+rpm -U
+rpm -U yum
+rpm -h
+rpm --help
+fedi yum
+rpm --rebuilddb
+sudo rpm --rebuilddb
+sudo su
+fedi grub-customizer
+sudo dnf distro-sync
+cd /etc/yum.repos.d
+dir
+vi fedora
+vi fedora.repo
+echo $releasever
+vi fedora.repo
+vi fedora.repo
+vi fedora-updates.repo
+echo $basearch
+c
+dir
+vi rpmfusion-free.repo
+c
+neofetch
+c
+sudo vi /etc/samba/smb.conf
+sudo systemctl restart smb
+sudo systemctl restart nmb
+neofetch
+vi
+exit
+c
+find zsh-theme-powerlevel9k
+find zsh-theme-powerlevel9k .
+man find
+find . -name powerlevel9k.zsh-theme -print -quit
+find  -name powerlevel9k.zsh-theme . -print -quit
+find  -name powerlevel9k.zsh-theme  -print -quit
+find . -name powerlevel9k.zsh-theme -quit
+man find
+find powerlevel9k.zsh-theme .
+find . powerlevel9k.zsh-theme 
+find / powerlevel9k.zsh-theme 
+find /usr powerlevel9k.zsh-theme 
+find /usr powerlevel9k.zsh-theme  -print -quit
+find /usr powerlevel9k.zsh-theme   -quit
+find /usr powerlevel9k.zsh-theme 
+locate
+locate powerlevel9k.zsh-theme
+if locate powerlevel9k.zsh-theme\
+echo "yay"\
+fi
+if [[ locate powerlevel9k.zsh-theme ]]; then
+if [[ locate powerlevel9k.zsh-theme ]]
+find
+man locate
+if [[ locate powerlevel9k.zsh-theme == 0 ]]
+locate powerlevel9k.zsh-theme
+if [[ $? -eq 0 ]]; then\
+echo "yay"\
+else\
+echo "aww"\
+fi
+locate -h
+less /etc/shellrc/alias.d
+hash startx
+hash vi
+hash nvim
+hash nvim 2
+hash -h
+hash --help
+man hash
+c
+cd /srv/samba/media
+dir
+cd video/Shows
+dir
+ls
+c
+\ls
+cd ../Movies
+dir
+\ls
+\ls -h
+\ls --help
+\ls -w 1
+c
+c
+neofetch
+sudo firewall-cmd --add-service=ssh --permanent 
+firewall-cmd --reload 
+sudo systemctl enable sshd
+sudo systemctl start sshd
+fedu
+sudo crontab -e
+echo 1 > /sys/module/kvm/parameters/ignore_msrs
+sudo echo 1 > /sys/module/kvm/parameters/ignore_msrs
+sudo su
+neofetch
+fedu
+c
+sudo virsh start win10
+sudo virsh stop win10
+sudo virsh destroy win10
+c
+sudo su
+sudo virsh start win10
+c
+cd /etc/shellrc/
+dir
+sudo gedit alias.d
+sudo gedit alias.d &&
+sudo gedit alias.d &
+sudo gedit common.d &
+ls /usr/sbin/reboot
+less /usr/sbin/reboot
+video
+sudo gedit alias.d &
+ls
+c
+ls
+sudo gedit function.d
+cd zsh.d
+dir
+sudo gedit prompt.zsh
+sudo gedit prompt.zsh
+dir
+c
+dir
+cd powerl
+cd powerlevel9k
+dir
+cd ..
+c
+dir
+cd ..
+dir
+cd
+cd .config/zsh
+dir
+vi .zshrc
+c
+dir
+cd ../nvim
+dir
+gedit init.vim
+sudo virsh start win10
+nvim
+fedr discord-canary-0.0.19-1.fc26.x86_64 
+gedit init.vim
+vi init.vim
+c
+vi init.vim
+vi /etc/shellrc/alias.d
+vi /etc/shellrc/alias.d
+sudo vi /etc/shellrc/alias.d
+c
+sudo su
+c
+dir
+c
+vi init.vim
+cd
+c
+dir
+l
+la
+git config --global user.name\
+
+git config --global user.name "static-dragon"
+git config --global user.name\
+
+la
+c
+less .bashrc
+la
+rm -rf .bash*
+c
+la
+vi .gitconfig
+c
+la
+cd .parallel
+dir
+cd ..
+c
+dir
+la
+vi .zshrc
+cd DOw
+cd Downloads
+dir
+rm -rf *
+cd
+c
+dir
+cd Documents
+dir
+cd ..
+c
+dir
+cd Pictures
+dir
+cd ..
+c
+la
+cd .fzf
+dir
+less CHANGELOG.md
+less README
+less README.md
+cd
+rm -rf .fzf
+c
+dir
+la
+cd .pki
+dir
+cd nssdb
+dir
+cd
+c
+dir
+la
+ls
+ll
+c
+ll
+fedi cmatrix
+c
+c
+fedr grub-customizer-5.0.6-2.fc26.x86_64
+c
+neofetch
+neofetch -D ubuntu
+neofetch  -h
+neofetch  --help
+neofetch  --ascii-distro guix
+neofetch  --ascii_distro gui
+neofetch  --ascii_distro guix
+neofetch  --ascii_distro templeos
+neofetch  --ascii_distro zorinos
+neofetch  --ascii_distro arch_old
+neofetch  --ascii_distro ubuntu_old
+neofetch  --ascii_distro ubuntu
+neofetch  --ascii_distro xubuntu
+neofetch  --ascii_distro lubuntu
+neofetch  --ascii_distro kubuntu
+neofetch  --ascii_distro mythbuntu
+neofetch  --ascii_distro redstaros
+neofetch  --ascii_distro windowsxp
+neofetch  --ascii_distro windows7
+neofetch  --ascii_distro windows
+neofetch  --ascii_distro windows10
+neofetch  --ascii_distro debian
+neofetch  --ascii_distro slackware
+neofetch  --ascii_distro gentoo
+fedi cmatrix
+fedi cowsay
+cowsay fuck you hunter
+cowsay fuck you hunter >> cow
+cowsay 666 hail satan >> cow.txt
+cowsay fuck you hunter >> cow
+cowsay 666 hail satan >> cow
+cowsay don't eat beef, eat dick, faggo! >> cow
+cowsay don\'t eat beef, eat dick, faggo! >> cow
+cowsay I'm a woman trapped in a cow\'s body\n~anita sarkesian >> cow
+cowsay I'm a woman trapped in a cow\'s body \n ~anita sarkesian >> cow
+cowsay I'm a woman trapped in a cow\'s body \n anita sarkesian >> cow
+cowsay $"I'm a woman trapped in a cow\'s body \n ~anita sarkesian" >> cow
+cowsay $"I'm a woman trapped in a cow\'s body\n~anita sarkesian" >> cow
+cowsay $"I'm a woman trapped in a cow\'s body\n~anita sarkesian" >> cow
+cowsay $"I'm a woman trapped in a cow\'s body\nanita sarkesian" >> cow
+cowsay $"I\'m a woman trapped in a cow\'s body\nanita sarkesian" >> cow
+cowsay $"I'm anita Sarkeesian" >> cow
+exit
+fedu
+c
+sudo virsh start win10
+sudo virsh destroy win10
+c
+dir
+c
+fedu
+c
+fedr vim-minimal-2:8.0.705-1.fc26.x86_64 qt-1:4.8.7-28.fc26.x86_64
+fedr vim-minimal-2:8.0.705-1.fc26.x86_64 
+fedr qt-1:4.8.7-28.fc26.x86_64
+c
+fedu
+fedi tmux
+tmux
+c
+c
+'sudo dnf install python-appdirs python-ipaddr python-netifaces python-psutil wxPythoN'
+exit
+exit
+cd /etc/shellrc
+dir
+vi common.d
+sudo vi common.d
+c
+cd /etc/profile.d
+dir
+sudo nvim freetype.sh
+sudo nvim freetype.sh
+fedi freetype-freeworld
+cd /etc/fonts/
+dir
+sudo nvim local.conf
+c
+sudo dnf install python-appdirs python-ipaddr python-netifaces python-psutil wxPython
+ wget --trust-server-names https://mullvad.net/download/latest/source/
+ sudo pip install mullvad-60.tar.gz
+dir
+ sudo pip install mullvad-63.tar.gz
+ tar -zvxf mullvad-60.tar.gz && sudo cp mullvad-60/src/mullvad/update-resolv-conf /etc/openvpn/
+ tar -zvxf mullvad-63.tar.gz && sudo cp mullvad-63/src/mullvad/update-resolv-conf /etc/openvpn/
+ sudo chmod 755 /etc/openvpn/update-resolv-conf
+dir
+rm -rf mullvad-63*
+c
+dir
+rm cow*
+c
+dir
+fedi kodi
+cd /tmp
+sudo su
+cd
+c
+git clone https://github.com/kevinboone/solunar_cmdline.git
+dir
+cd solunar_cmdline
+make
+sudo make
+sudo makdir
+dir
+c
+ls
+c
+la
+make
+chmod 777 parse_zoneinfo.pl
+make
+sudo make install
+solunar
+cd /usr/bin
+dir
+sudo nvim day-mode
+sudo nvim night-mode
+sudo nvim day-night-cycle
+sudo nvim day-night-cycle
+sudo nvim find-twilight
+solunar
+solunar -c
+solunar -c "Palm Bay"
+solunar -c Melbourne
+solunar -c US
+solunar -c Palm Bay
+solunar -c PalmBay
+solunar --cities
+solunar --cities | grep Americas
+cd
+solunar --cities | grep America
+solunar --cities | grep New
+solunar -c New_York
+solunar --cities
+solunar --cities | grep tal
+solunar --cities | grep florida
+solunar --cities | grep America
+cd /usr/bin
+sudo nvim find-twilight
+day-night-cycle
+la
+sudo chmod 711 day-mode
+sudo chmod 711 day-night-cycle
+sudo chmod 711 night-mode
+sudo chmod 711 find-twilight
+c
+find-twilight
+dir
+find-twilight
+la
+sudo chown 
+sudo chown --help
+sudo chown static-dragon find-twilight 
+sudo chown static-dragon day-mode
+sudo chown static-dragon night-mode
+sudo chown static-dragon day-night-cycle
+find-twilight
+sudo nvim find-twilight
+find-twilight
+day-night-cycle
+sudo nvim day-night-cycle
+day-night-cycle
+sudo nvim day-night-cycle
+day-night-cycle
+sudo nvim day-night-cycle
+sudo nvim day-mode
+sudo nvim night-mode
+sudo nvim find-twilight
+c
+day-night-cycle
+day-night-cycle
+nvim day-night-cycle
+day-night-cycle
+nvim day-night-cycle
+c
+day-night-cycle
+c
+cd
+c
+crontab -e
+cd /usr/bin
+dir
+vi night-mode
+vi night-mode
+vi day-mode
+vi night-mode
+night-mode
+vi night-mode
+night-mode
+cd ~/Pictures
+dir
+cd Wallpapers
+dir
+sudo mv yn* /usr/share/backgrounds
+vi night-mode
+cd /usr/bin
+vi night-mode
+night-mode
+vi night-mode
+night-mode
+night-mode
+vi night-mode
+night-mode
+vi night-mode
+./night-mode
+sudo cp /usr/share/backgrounds/yn* ~/Pictures/Wallpapers
+c
+cd ~/Pictures/Dow
+cd ~/Pictures/Wallpapers
+dir
+sudo chown static-dragon *
+c
+cd /usr/bin
+vi night-mode
+./night-mode
+vi night-mode
+chmod 777 ~/Pictures/Wallpapers/*
+./night-mode
+vi night-mode
+./night-mode
+night-mode
+vi night-mode
+night-mode
+vi day-mode
+day-mode
+night-mode
+day-mode
+night-mode

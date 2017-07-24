@@ -1,14 +1,14 @@
 # dotfiles
 
 ## How to use
-Everything except the i3 folder goes in your home directory, while i3 goes into your ~/.config folder
-or you may use the automated installer if you wish
+The nvim and zsh folders go in .config, and the contents of the global folder are moved to /etc (or
+elsewhere if you wish.)
 
-## Requirements for .Xresources
-For fonts pertaining to rofi and Urxvt, you need the [Ofice Code Pro](https://github.com/nathco/Office-Code-Pro) fonts
-Obviously you will need rofi and Urxvt for the .Xresources changes to apply to them
 
 ## Requirements for vim changes
+
+Now that I am using neovim there is no need for manual plugin installation
+
 Vim Requires powerline fonts, and lua for the plugins to function correctly
 Also the following plugins:
 
@@ -50,3 +50,4 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>
+
