@@ -1,52 +1,77 @@
+#!/bin/sh
 #=======================
 # Shell-common
 # Maintained by Justin Doyle
-# Last edited: November 13th, 2016
+# Last edited: January 31st, 2018
 #=======================
 
-# Tmux start {{{
-
-# TMUX
-if which tmux >/dev/null 2>&1; then
-    #if not inside a tmux session, and if no session is started, start a new session
-#	test -z "$TMUX" && (tmux attach || tmux new-session)
-fi
-
-
-# }}}
 
 # Environment Variables {{{
+
+
+
+lsb_release >/dev/null 2>/dev/null
+if [ $? = 0 ]; then
+  DIST=$(lsb_release -ds | sed 's/^\"//g;s/\"$//g')
+elif [ -f /etc/os-release ]; then
+  source /etc/os-release
+  if [ -n "${PRETTY_NAME}" ]; then
+    printf "${PRETTY_NAME}\n"
+  else
+    printf "${NAME}"
+    [[ -n "${VERSION}" ]] && printf " ${VERSION}"
+    printf "\n"
+  fi
+# now looking at distro-specific files
+elif [ -f /etc/arch-release ]; then
+  DIST="Arch"
+elif [ -f /etc/gentoo-release ]; then
+  DIST="Gentoo"
+elif [ -f /etc/fedora-release ]; then
+  DIST="Fedora"
+elif [ -f /etc/redhat-release ]; then
+  DIST="RHEL"
+elif [ -f /etc/debian_version ]; then
+  DIST="Debian"
+else
+  printf "Unknown\n"
+fi
+
+if [[ $(ps --no-header -p $PPID -o comm | grep -Ev '^(yakuake|konsole)$' ) ]] && [[ "$XDG_CURRENT_DESKTOP" = "KDE" ]]; then
+        for wid in $(xdotool search --pid $PPID); do
+            xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $wid; done
+fi
 
 if [[ -n "$ZSH_VERSION" ]]; then
 	export HISTFILE=$HOME/.config/zsh/history
 else
 	export HISTFILE=$HOME/.config/bash/bash-history
 fi
-if hash nvim 2>/dev/null;then
+if command -v nvim >/dev/null;then
 	export EDITOR=nvim
-elif hash vim 2>/dev/null; then
+elif command -v vim >/dev/null; then
 	export EDITOR=vim
-elif hash emacs 2>/dev/null;then
+elif command -v emacs >/dev/null;then
 	export EDITOR=emacs
-elif hash nano 2>/dev/null; then
+elif command -v nano >/dev/null; then
 	export EDITOR=nano
-elif hash nano-tiny 2>/dev/null; then
+elif command -v nano-tiny >/dev/null; then
 	export EDITOR=nano-tiny
 else
 	export EDITOR=vi
 fi
 
-if hash mpv 2>/dev/null; then
+if command -v mpv >/dev/null; then
 	VIDEO=mpv
-elif hash mplayer 2>/dev/null; then
+elif command -v mplayer >/dev/null; then
 	VIDEO=mplayer
 fi
 
-if hash cmus 2>/dev/null; then
+if command -v cmus >/dev/null; then
 	MUSIC=cmus
-elif hash mplayer 2>/dev/null; then
+elif command -v mplayer >/dev/null; then
 	MUSIC=mplayer
-elif hash mpv 2>/dev/null; then
+elif command -v mpv >/dev/null; then
 	MUSIC="mpv --no-video"
 fi
 
@@ -107,7 +132,7 @@ shopt -s nocaseglob         # pathname expansion will be treated as case-insensi
 
 
 
-#if hash wine 2>/dev/null; then
+#if command -v wine 2>/dev/null; then
 #	export WINEARCH=win32
 #fi
 

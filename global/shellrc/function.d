@@ -1,7 +1,8 @@
+#!/bin/sh
 #=======================
 # Shell-functions
 # Maintained by Justin Doyle
-# Last edited: November 13th, 2016
+# Last edited: January 31st, 2018
 #=======================
 
 
@@ -91,7 +92,7 @@ umountiso () {
 
 #Find your current IP (Assuming you're connected to the internet
 
-if hash lynx 2>/dev/null; then
+if command -v lynx >/dev/null; then
 	myip () {
 		lynx -dump -hiddenlinks=ignore -nolist http://checkip.dyndns.org:8245/ | awk '{ print $4 }' | sed '/^$/d; s/^[ ]*//g; s/[ ]*$//g' 
 	}
@@ -103,8 +104,8 @@ fi
 
 # Play music from youtube via MPV
 function mm() {
-	if hash mpv 2>/dev/null; then
-		if hash youtube-dl 2>/dev/null; then
+	if command -v mpv >/dev/null; then
+		if command -v youtube-dl >/dev/null; then
 				mpv --no-video --ytdl-format=bestaudio ytdl://ytsearch10:"$@"
 		else
 			echo "you need youtube-dl to run this command"
@@ -119,8 +120,8 @@ function mm() {
 # Watch twitch streams via MPV
 
 function twitch() {
-	if hash mpv 2>/dev/null; then
-		if hash livestreamer 2>/dev/null; then
+	if command -v mpv >/dev/null; then
+		if command -v livestreamer >/dev/null; then
 			livestreamer -p $VIDEO twitch.tv/$@ source &
 		else
 			echo "You need livestreamer to run this command"
