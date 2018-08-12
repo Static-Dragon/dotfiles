@@ -23,7 +23,6 @@ elif [ -f /etc/os-release ]; then
 # now looking at distro-specific files
 elif [ -f /etc/arch-release ]; then
   DIST="Arch"
-  echo "HI!"
 elif [ -f /etc/gentoo-release ]; then
   DIST="Gentoo"
 elif [ -f /etc/fedora-release ]; then
