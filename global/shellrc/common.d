@@ -1,8 +1,8 @@
 #!/bin/sh
 #=======================
 # Shell-common
-# Maintained by Justin Doyle
-# Last edited: January 31st, 2018
+# Maintained by Justin "static-dragon" Doyle
+# Last edited: August 12th, 2018
 #=======================
 
 
@@ -16,15 +16,14 @@ if [ $? = 0 ]; then
 elif [ -f /etc/os-release ]; then
   source /etc/os-release
   if [ -n "${PRETTY_NAME}" ]; then
-    printf "${PRETTY_NAME}\n"
+    DIST="${PRETTY_NAME}"
   else
-    printf "${NAME}"
-    [[ -n "${VERSION}" ]] && printf " ${VERSION}"
-    printf "\n"
+    DIST="${NAME}"
   fi
 # now looking at distro-specific files
 elif [ -f /etc/arch-release ]; then
   DIST="Arch"
+  echo "HI!"
 elif [ -f /etc/gentoo-release ]; then
   DIST="Gentoo"
 elif [ -f /etc/fedora-release ]; then

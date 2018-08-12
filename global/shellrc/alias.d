@@ -1,15 +1,14 @@
 #!/bin/sh
 #=======================
 # Shell-aliases
-# Maintained by Justin Doyle
-# Last edited: January 31st, 2018
+# Maintained by Justin "static-dragon" Doyle
+# Last edited: August 12th, 2018
 #=======================
 
 # Alias Declaration {{{
 
 #  File manipulation {{{
 
-#alias brcedit="$EDITOR ~/.bashrc && source ~/.bashrc Now a script in ~/Documents/scripts
 
 if command -v startx >/dev/null; then
 	alias xinit="$EDITOR ~/.xinitrc"
@@ -55,6 +54,12 @@ fi
 		alias aurs="pacaur -s"
 		alias aurr="pacaur -R"
 		alias pacu="pacaur -Syu"
+	elif command -v aurman >/dev/null; then
+#		alias aurman="aurman --color "
+		alias auri="aurman -S"
+		alias aurs="aurman -Ss"
+		alias aurr="aurman -R"
+		alias pacu="aurman -Syu"
 	else
 		alias pacu="spacman -Syu"
 		alias auri=""
@@ -63,7 +68,7 @@ fi
     #}}}
 # }}}
 
-# Debian/*buntu/mint {{{
+# Debian\*buntu\mint {{{
 elif [[ $DIST = *"Debian"* ]]; then
 	alias asedit="sued $EDITOR /etc/apt/sources.list"
 	aptpref="apt"
