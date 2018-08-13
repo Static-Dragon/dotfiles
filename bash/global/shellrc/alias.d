@@ -408,10 +408,10 @@ alias l="command ls"
 alias la="ls -lash --color"
 alias ls="ls -lsh --color"
 alias dir='ls'
-if command -v rsync >/dev/null; then
-	alias cp="rsync -rv --progress"
-	alias mv="rsync -aP --remove-source-files"
-fi
+#if command -v rsync >/dev/null; then
+#	alias cp="rsync -rv --progress"
+#	alias mv="rsync -aP --remove-source-files"
+#fi
 # alias cd="cd $1 && ls" Doesn't work, needs to be function
 
 # Clear tmp directory

@@ -1,8 +1,8 @@
 #!/bin/sh
 #=======================
 # Shell-common
-# Maintained by Justin "static-dragon" Doyle
-# Last edited: August 12th, 2018
+# Maintained by Justin Doyle
+# Last edited: January 31st, 2018
 #=======================
 
 
@@ -13,16 +13,20 @@
 lsb_release >/dev/null 2>/dev/null
 if [ $? = 0 ]; then
   DIST=$(lsb_release -ds | sed 's/^\"//g;s/\"$//g')
+  echo "hi!"
 elif [ -f /etc/os-release ]; then
   source /etc/os-release
   if [ -n "${PRETTY_NAME}" ]; then
     DIST="${PRETTY_NAME}"
   else
     DIST="${NAME}"
+#    [[ -n "${VERSION}" ]] && printf " ${VERSION}"
+#    printf "\n"
   fi
 # now looking at distro-specific files
 elif [ -f /etc/arch-release ]; then
   DIST="Arch"
+  echo "HI!"
 elif [ -f /etc/gentoo-release ]; then
   DIST="Gentoo"
 elif [ -f /etc/fedora-release ]; then
@@ -33,11 +37,6 @@ elif [ -f /etc/debian_version ]; then
   DIST="Debian"
 else
   printf "Unknown\n"
-fi
-
-if [[ $(ps --no-header -p $PPID -o comm | grep -Ev '^(yakuake|konsole)$' ) ]] && [[ "$XDG_CURRENT_DESKTOP" = "KDE" ]]; then
-        for wid in $(xdotool search --pid $PPID); do
-            xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $wid; done
 fi
 
 if [[ -n "$ZSH_VERSION" ]]; then
@@ -90,6 +89,25 @@ if [ $UID -ne 0 ]; then
 	alias reboot="sudo reboot"
 	alias shutdown="sudo poweroff"
 fi
+
+# Colors
+NC='\033[0m'
+
+RED='\033[00;31m'
+GREEN='\033[00;32m'
+YELLOW='\033[00;33m'
+BLUE='\033[00;34m'
+PURPLE='\033[00;35m'
+CYAN='\033[00;36m'
+LIGHTGRAY='\033[00;37m'
+
+LRED='\033[01;31m'
+LGREEN='\033[01;32m'
+LYELLOW='\033[01;33m'
+LBLUE='\033[01;34m'
+LPURPLE='\033[01;35m'
+LCYAN='\033[01;36m'
+WHITE='\033[01;37m'
 
 # Less Settings
 
