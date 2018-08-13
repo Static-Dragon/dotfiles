@@ -1,7 +1,7 @@
 # dotfiles
 
 ## How to use
-The nvim and zsh folders go in .config, and the contents of the global folder are moved to /etc (or
+The nvim and zsh folders go in .config, and the contents of the bash/global folder are moved to /etc (or
 elsewhere if you wish.)
 
 
