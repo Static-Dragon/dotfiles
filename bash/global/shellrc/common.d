@@ -2,18 +2,14 @@
 #=======================
 # Shell-common
 # Maintained by Justin Doyle
-# Last edited: January 31st, 2018
+# Last edited: September 5th, 2019
 #=======================
 
 
 # Environment Variables {{{
 
-
-
-lsb_release >/dev/null 2>/dev/null
-if [ $? = 0 ]; then
+if command -v lsb_release >/dev/null; then
   DIST=$(lsb_release -ds | sed 's/^\"//g;s/\"$//g')
-  echo "hi!"
 elif [ -f /etc/os-release ]; then
   source /etc/os-release
   if [ -n "${PRETTY_NAME}" ]; then
@@ -26,7 +22,6 @@ elif [ -f /etc/os-release ]; then
 # now looking at distro-specific files
 elif [ -f /etc/arch-release ]; then
   DIST="Arch"
-  echo "HI!"
 elif [ -f /etc/gentoo-release ]; then
   DIST="Gentoo"
 elif [ -f /etc/fedora-release ]; then
@@ -36,7 +31,7 @@ elif [ -f /etc/redhat-release ]; then
 elif [ -f /etc/debian_version ]; then
   DIST="Debian"
 else
-  printf "Unknown\n"
+  DIST="Unkown"
 fi
 
 if [[ -n "$ZSH_VERSION" ]]; then
@@ -79,10 +74,17 @@ else
 	INIT=systemd
 fi
 
+if [ -d $HOME/Documents/Android/platform-tools ];then
+	export PATH="$HOME/Documents/Android/platform-tools:$PATH"
+fi
+
+#if [ -d $HOME/Documents/scripts ]; then
+#	source $HOME/Documents/scripts/*
+#fi
+
 export SHELLEX=/etc/shell-extensions
 export VISUAL=$EDITOR
 export PAGER=less
-export SVRIP=192.168.1.81 # Change if applicable
 # Shutdown/reboot
 
 if [ $UID -ne 0 ]; then
