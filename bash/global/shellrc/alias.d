@@ -142,7 +142,13 @@ elif [[ $DIST = *"Gentoo"* ]]; then
 	# alias awr="--autounmask-write"
 	alias update="genu"
 elif [[ $DIST = *"Fedora"* ]]; then
-	if command -v dnf >/dev/null; then
+	if command -v rpm-ostree >/dev/null; then
+		if [[ $UID -ne 0 ]]; then
+			alias dnfs="sudo rpm-ostree"
+		else
+			alias dnfs="rpm-ostree"
+		fi
+	elif command -v dnf >/dev/null; then
 		if [[ $UID -ne 0 ]]; then
 			alias dnfs="sudo dnf"
 		else
@@ -404,10 +410,18 @@ alias cp="cp -n -i -v" #Don't over-write files (learned this the hard way...)
 alias home="cd ~/"
 alias Downloads="cd ~/Downloads"
 alias config="cd ~/.config"
-alias l="command ls"
-alias la="ls -lash --color"
-alias ls="ls -lsh --color"
-alias dir='ls'
+if command -v colorls >/dev/null; then
+	alias l="command colorls"
+	alias la="colorls -1AS"
+	alias ls="colorls -1S"
+	alias dir="colorls"
+else
+	alias l="command ls"
+	alias la="ls -lAsh --color"
+	alias ls="ls -ls --color"
+	alias dir="ls"
+fi
+
 #if command -v rsync >/dev/null; then
 #	alias cp="rsync -rv --progress"
 #	alias mv="rsync -aP --remove-source-files"
